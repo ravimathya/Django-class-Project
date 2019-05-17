@@ -1,0 +1,6 @@
+DEBUG_STATE = True
+DB_NAME ='traveldb2'
+DB_USER ='traveluser'
+DB_PASSWORD ='HITman9899'
+DB_HOST ='127.0.0.1'
+DB_PORT ='5432'

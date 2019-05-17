@@ -1,0 +1,14 @@
+/* #id_image {
+	height: 45px !important;
+}
+
+.tag-name {
+	cursor: pointer;
+}
+
+.tag-name::before {
+	content: ">";
+	margin-right: 5px;
+} */
+
+/*End of Home page  css */

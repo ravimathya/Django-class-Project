@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% block meta_link %}
+    {% endblock %}
+
+    <title>{% block title %} {% endblock %} </title>
+    <!--template tags-->
+    {% load static %}
+    <!--loads static files-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <!-- <link rel="stylesheet" href="css/custom.css"> -->
+    <!-- <link rel="stylesheet"  href="{% static 'css/style.css' %}"> -->
+    <link rel="stylesheet"  href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">
+    {% block style_links %}
+
+    {% endblock %}
+    
+</head>
+<body>
+    <!--place header component here-->
+    <!-- <div>
+        <h2>this is coming from base</h2>
+        <img src="{% static 'img/hey1.jpg' %}" alt="">
+    </div> -->
+    <div class=wrapper>
+        <img src="{% static 'img/hey1.jpg' %}" class="d-block w-100 fixed-height" alt="...">
+            <div class="overlay">
+
+            </div>
+        <div class="carousel-caption d-none d-md-block">
+            <button class="tagbutton">Tag Name</button>
+            <p >TITLE OF PHOTOGRAPH</p>
+        </div>
+    </div>
+    <nav class="carousel-caption navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- <nav class="navbar navbar-expand-md bg-dark navbar-light"> -->
+    
+        <!-- brand -->
+        <a class="navbar-brand" href="#" ></a>
+        <!-- toggler/collapsibe button -->
+        <button class="navbar-toggler" type="button" data-toggle="collaspe" data-target ="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link "href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class ="nav-link"href="{% url 'story:story' %}">STORY</a>
+            </li>
+            <li class="nav-item">
+                <a class ="nav-link"href="{% url 'home:contact' %}">CONTACT</a>
+            </li>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                </div>
+            </form>
+        </ul>
+    </div>
+    </nav>
+
+    
+    <!--this place is for other templates-->
+    {% block content%}
+    <!-- inside here we load index file-->
+
+    {% endblock content%}
+
+    <!--place footer component here-->
+    <div class="footer" id="my-footer">
+        <div class="footer-navbar">
+            <a href="index.html">HOME</a>
+            <a href="contact.html">CONTACT US</a>
+            <a href="about.html">ABOUT US</a>
+        </div>
+    </div>  
+    <script src ="{% static  'js/jquery.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script> 
+        <script src ="{% static 'js/bootstrap.js' %}"></script>
+
+        {% block  script_link %}
+        {% endblock %}
+        {% block scripts %}
+        {% endblock %}
+</body>
+</html>
